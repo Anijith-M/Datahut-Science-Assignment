@@ -65,20 +65,21 @@ driver.quit()
 
 df = pd.DataFrame(data)
 
-# 1. Remove duplicate products
+# 5. Remove duplicate products
 df.drop_duplicates(subset="url", inplace=True)
 
-# 2. Remove rows with missing product_name or sale_price
+# 6. Remove rows with missing product_name or sale_price
 df = df.dropna(subset=["product_name", "sale_price"])
 
-# 3. Optional: clean price columns (remove ₹ and commas)
+# 8. Optional: clean price columns (remove ₹ and commas)
 df["sale_price"] = df["sale_price"].str.replace("₹", "", regex=False).str.replace(",", "")
 df["mrp"] = df["mrp"].str.replace("₹", "", regex=False).str.replace(",", "")
 
-# 4. Save final CSV
+# 8. Save final CSV
 df.to_csv("dataset.csv", index=False)
 
 print("Saved", len(df), "products")
 
 
 print("Saved", len(df), "products")
+
