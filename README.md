@@ -62,5 +62,3 @@ the source data. This behavior is documented as a limitation of the website.
    python scraper.py
 4. The output dataset will be saved as dataset.csv
 
-   ```bash
-   pip install selenium pandas webdriver-manager
